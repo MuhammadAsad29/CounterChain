@@ -170,6 +170,8 @@ with st.sidebar:
     # Model Selector
     llm_options = [
         "nvidia/nemotron-3-super-120b-a12b:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "nvidia/nemotron-3.5-lightning:free",
         "openrouter/free"
     ]
     selected_llm = st.selectbox(
@@ -277,7 +279,7 @@ with tab_lab:
         else:
             client = OpenRouterClient(api_key=user_api_key or get_api_key(), model=selected_llm)
             
-            with st.spinner("Retrieving grounded post-mortem evidence & reasoning via ling-3.0-flash-fin..."):
+            with st.spinner(f"Retrieving grounded post-mortem evidence & simulating invariants via {selected_llm}..."):
                 try:
                     # 1. Retrieve Grounding Evidence
                     retrieved_chunks = retriever.retrieve(
@@ -421,7 +423,7 @@ with tab_benchmark:
         client = OpenRouterClient(api_key=user_api_key or get_api_key(), model=selected_llm)
         evaluator = BenchmarkEvaluator(retriever, client)
         
-        with st.spinner("Running 5 benchmark exploit cases through CounterChain..."):
+        with st.spinner(f"Running benchmark exploit cases through CounterChain via {selected_llm}..."):
             summary = evaluator.run_all_benchmarks()
             st.session_state["benchmark_summary"] = summary
 
