@@ -35,8 +35,8 @@ git push -u origin main
 1. Before clicking Deploy, click **"Advanced settings..."** (or expand the **Secrets** section).
 2. In the Secrets text box, paste your OpenRouter key:
 ```toml
-OPENROUTER_API_KEY = "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"
-OPENROUTER_MODEL = "inclusionai/ling-3.0-flash-fin:free"
+OPENROUTER_API_KEY = "your_openrouter_api_key_here"
+OPENROUTER_MODEL = "nvidia/nemotron-3-super-120b-a12b:free"
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 ```
 3. Click **"Save"**.
