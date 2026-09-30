@@ -8,6 +8,8 @@
 
 **CounterChain** is a domain-specific Retrieval-Augmented Generation (RAG) system engineered to perform structured counterfactual reasoning over historical Decentralized Finance (DeFi) exploits.
 
+🔗 Live Deployment: https://counterchain.streamlit.app/
+
 Instead of merely retrieving historical post-mortems, CounterChain evaluates hypothetical security interventions:
 > *"Would the $197M Euler Finance exploit have succeeded if donateToReserves had strictly enforced checkLiquidity on the donor account?"*
 
